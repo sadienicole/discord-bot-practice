@@ -7,18 +7,22 @@ client.on("ready", () => {
   console.log("I am ready!");
 });
 
-const confic = require("./config.json");
+const newconfig = require("./newconfig.json");
 
 client.on("messageCreate", (message) => {
-  if(!message.content.startsWith(config.prefix) || message.author.bot) return;
+  if(!message.content.startsWith(newconfig.prefix) || message.author.bot) return;
 
-  if (message.content.startsWith(`${config.prefix}ping`)) {
+  if (message.content.startsWith(`${newconfig.prefix}ping`)) {
     message.channel.send("pong!");
   } else
 
-  if (message.content.startsWith(`${config.prefix}bitch`)) {
+  if (message.content.startsWith(`${newconfig.prefix}bitch`)) {
       message.channel.send("I don't know if your brain is all scrambled from all the molly you take, but i never said that.");
+  } else
+
+  if (message.content.startsWith(`${newconfig.prefix}yay`)) {
+    message.channel.send("i'm happy to be here");
   }
 });
 
-client.login(config.token);
+client.login(newconfig.token);
